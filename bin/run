@@ -1,0 +1,17 @@
+#!/bin/bash
+set -eu
+
+if [ -z "${IMAGE:+x}" ]; then
+  IMAGE=ghcr.io/codewars/purescript:latest
+fi
+
+W=/workspace
+
+# Create container
+C=$(docker container create --rm -w $W $IMAGE pulp test)
+
+# Copy files from the examples directory
+docker container cp examples/${1:-passing}/. $C:$W
+
+# Run tests
+docker container start --attach $C
