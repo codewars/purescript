@@ -28,6 +28,11 @@ ENV USER=codewarrior \
     PATH=/opt/purescript:$PATH
 
 RUN set -ex; \
+    # TODO Properly package the reporter and install
+    mkdir /tmp/reporter; \
+    curl -fsSL https://github.com/codewars/purescript-spec-reporter-codewars/archive/refs/tags/v0.0.1.tar.gz | tar xz -C /tmp/reporter --strip-components=1; \
+    mv /tmp/reporter/src/Test /workspace/src/Test; \
+    rm -rf /tmp/reporter; \
     cd /workspace; \
     npm install; \
 # install packages
