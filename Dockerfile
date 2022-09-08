@@ -2,7 +2,8 @@ FROM buildpack-deps:bionic
 
 RUN set -ex; \
     useradd --create-home codewarrior; \
-    ln -s /home/codewarrior /workspace;
+    mkdir -p /workspace; \
+    chown -R codewarrior: /workspace;
 
 RUN set -ex; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash -; \
