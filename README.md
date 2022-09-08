@@ -7,7 +7,7 @@ Container image for PureScript
 ```bash
 W=/workspace
 # Create container
-C=$(docker container create --rm -w $W ghcr.io/codewars/purescript:latest pulp test)
+C=$(docker container create --rm -w $W ghcr.io/codewars/purescript:latest spago test)
 
 # Copy files from the examples directory
 docker container cp ./examples/passing/. $C:$W

@@ -8,7 +8,7 @@ fi
 W=/workspace
 
 # Create container
-C=$(docker container create --rm -w $W $IMAGE pulp test)
+C=$(docker container create --rm -w $W $IMAGE spago test)
 
 # Copy files from the examples directory
 docker container cp examples/${1:-passing}/. $C:$W
