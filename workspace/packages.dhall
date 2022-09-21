@@ -4,8 +4,8 @@ let upstream =
 
 let additions =
       { spec-reporter-codewars =
-        { repo = "https://github.com/andys8/purescript-spec-reporter-codewars"
-        , version = "d1f0c324630d40b4493c105188a9d7cd048bffb1"
+        { repo = "https://github.com/codewars/purescript-spec-reporter-codewars"
+        , version = "v0.2.0"
         , dependencies =
           [ "aff"
           , "bigints"
