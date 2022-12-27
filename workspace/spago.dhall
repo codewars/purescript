@@ -15,6 +15,7 @@
   , "lists"
   , "maybe"
   , "nonempty"
+  , "numbers"
   , "ordered-collections"
   , "partial"
   , "prelude"
